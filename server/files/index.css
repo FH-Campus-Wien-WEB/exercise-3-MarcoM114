@@ -1,25 +1,27 @@
 @import url(base.css);
 
 h1 {
-  font-size: 200%;
-  margin: 8px 0px;
+    color: #1a1a1a;
+    font-weight: bold;
+    margin-top: 0;
+    font-size: 1.8rem;
 }
 
 /* Constrain the page to the viewport */
 html, body {
   height: 100vh;
+  background-color: #f0f2f5; 
 }
 
-/* Center the nav's header and list */
+/* Task 3.2. Make the list items of the unordered list in the nav element a flex container, 
+   use column direction and center the child items
+ */
+
 nav {
   display: flex;
   flex-direction: column;
   align-items: center;
-}
-
-/* navigation buttons have full width */
-nav button {
-  width: 100%;
+  gap: 8px;
 }
 
 /* Remove unnecessary space and bullets from the lists */
@@ -31,10 +33,56 @@ ul {
 
 /* Task 2.1. Lay out the childs of the 'body' using Grid Template Areas. */
 
+body {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto auto 1fr auto;
+  grid-template-areas:
+    "header"
+    "nav"
+    "main"
+    "footer";
+}
+
+/* Assign areas to elements */
+header {
+  grid-area: header;
+}
+
+nav {
+  grid-area: nav;
+}
+
+main {
+  grid-area: main;
+  overflow-y: auto;
+}
+
+footer {
+  grid-area: footer;
+}
+
+/* Responsive: Desktop layout */
+@media (min-width: 768px) {
+  body {
+    grid-template-columns: 200px 1fr;
+    grid-template-rows: auto 1fr auto;
+    grid-template-areas:
+      "header header"
+      "nav main"
+      "footer footer";
+  }
+}
 
 /* Task 3.1. Make the header element a flex container and center its children
    vertically and horizontally.
  */
+
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
 
 /* Task 3.2. Make the list items of the unordered list in the nav element a flex container, 
@@ -43,23 +91,43 @@ ul {
 
 /* Task 3.3. Make the main element a Flexbox container */
 
+main {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  justify-content: center;
+}
+
 
 /* Task 3.4. Make the footer's ul a Flexbox container */
+
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+footer ul {
+  display: flex;
+  list-style: none;
+  gap: 16px;
+}
 
 
 /* From here on styling from exercise 1 */
 img {
-  border-radius: 12px;
+    border-radius: 20px;
+    max-width: 200px;
 }
 
 article {
-  background-color: lightgray;
-  border-radius: 16px;
-  padding: 16px;
-  width: 384px;
-  margin: 8px;
+    background-color: white;
+    border-radius: 30px;    
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1); 
+    margin: 20px;    
+    padding: 25px;
+    max-width: 500px;
 }
-
 a {
   color: beige;
 }
@@ -69,9 +137,13 @@ span {
 }
 
 .genre {
-  padding: 4px 8px;
-  border: solid black 1px;
-  border-radius: 6px;
-  background-color: darkgray;
-  font-weight: bold;
+    display: inline-block;
+    background-color: #e1f5fe;
+    color: #0288d1;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    margin-right: 8px;
+    border: 1px solid #b3e5fc;
+    font-weight: bold;
 }

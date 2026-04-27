@@ -15,7 +15,7 @@ Use
 
 or using `nodemon` (the **recommended** option)
 
-    npm run start-nodemon
+    
 
 to start the server. In any case the server will be running on port 3000. You should see the message
 

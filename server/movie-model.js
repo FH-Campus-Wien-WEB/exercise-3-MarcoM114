@@ -1,4 +1,43 @@
 module.exports = {
+  "tt1853728": {
+      "Title":"Django Unchained",
+      "Released":"2012-12-25",
+      "Runtime": 165,
+      "Genres": ["Drama", "Western"],
+      "Directors": ["Quentin Tarantino"],
+      "Writers":["Quentin Tarantino"],
+      "Actors": ["Jamie Foxx", "Christoph Waltz", "Leonardo DiCaprio"],
+      "Plot":"With the help of a German bounty-hunter, a freed slave sets out to rescue his wife from a brutal plantation owner in Mississippi.",
+      "Poster":"https://m.media-amazon.com/images/M/MV5BMjIyNTQ5NjQ1OV5BMl5BanBnXkFtZTcwODg1MDU4OA@@._V1_SX300.jpg",
+      "Metascore": 81,
+      "imdbRating": 8.5
+      },
+   "tt0116016": {
+      "Title":"Danger Zone",
+      "Released":"1996-08-02",
+      "Runtime": 92,
+      "Genres": ["Action", "Drama"],
+      "Directors":["Allan Eastman"],
+      "Writers": ["Jeff Albert", "Samuel Benedict", "Danny Lerner"],
+      "Actors": ["Billy Zane", "Robert Downey Jr.", "Cary-Hiroyuki Tagawa"],
+      "Plot":"American mining engineer gets involved in civil war and international conspiracy in an African country.",
+      "Poster":"https://m.media-amazon.com/images/M/MV5BMTcwNTAyMTYzOV5BMl5BanBnXkFtZTgwMjU1MzgwMzE@._V1_SX300.jpg",
+      "Metascore": 80,
+      "imdbRating": 4.4
+      },
+   "tt0120915": {
+      "Title":"Star Wars: Episode I - The Phantom Menace",
+      "Released":"1999-05-19",
+      "Runtime": 136,
+      "Genres": ["Action", "Adventure", "Fantasy"],
+      "Directors": ["George Lucas"],
+      "Writers": ["George Lucas"],
+      "Actors": ["Ewan McGregor", "Liam Neeson", "Natalie Portman"],
+      "Plot":"Two Jedi escape a hostile blockade to find allies and come across a young boy who may bring balance to the Force, but the long-dormant Sith resurface to claim their former glory.",
+      "Poster":"https://m.media-amazon.com/images/M/MV5BODVhNGIxOGItYWNlMi00YTA0LWI3NTctZmQxZGUwZDEyZWI4XkEyXkFqcGc@._V1_SX300.jpg",
+      "Metascore": 51,
+      "imdbRating": 6.5
+      },
   tt0084787: {
     imdbID: "tt0084787",
     Title: "The Thing",

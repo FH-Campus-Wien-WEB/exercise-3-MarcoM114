@@ -61,7 +61,9 @@ function loadMovies(genre) {
   }
 
   const url = new URL("/movies", location.href)
-  /* Task 1.4. Add query parameter to the url if a genre is given */
+  if (genre) {
+    url.searchParams.set('genre', genre);
+  }
 
   xhr.open("GET", url)
   xhr.send()
@@ -69,17 +71,32 @@ function loadMovies(genre) {
 
 window.onload = function () {
   const xhr = new XMLHttpRequest();
+  xhr.open('GET', '/genres');
   xhr.onload = function () {
-    const listElement = document.querySelector("nav>ul");
-
     if (xhr.status === 200) {
-      /* Task 1.3. Add the genre buttons to the listElement and 
-         initialize them with a click handler that calls the 
-         loadMovies(...) function above. */
       const genres = JSON.parse(xhr.responseText);
+      const navElement = document.querySelector('#genre-nav');
+      
+      // Nav leeren, aber die Überschrift behalten
+      const headingHtml = navElement.querySelector('h2')?.outerHTML || '<h2>Genres</h2>';
+      navElement.innerHTML = headingHtml;
 
-      /* When a first button exists, we click it to load all movies. */
-      const firstButton = document.querySelector("nav button");
+      // "All"-Button erstellen
+      const allButton = document.createElement('button');
+      allButton.textContent = 'All';
+      allButton.onclick = () => loadMovies();
+      navElement.appendChild(allButton);
+
+      // Buttons für jedes Genre erstellen
+      genres.forEach(genre => {
+        const genreButton = document.createElement('button');
+        genreButton.textContent = genre;
+        genreButton.onclick = () => loadMovies(genre);
+        navElement.appendChild(genreButton);
+      });
+
+      // Ersten Button klicken, um Filme zu laden
+      const firstButton = navElement.querySelector('button');
       if (firstButton) {
         firstButton.click();
       }
@@ -87,6 +104,7 @@ window.onload = function () {
       document.querySelector("body").append(`Daten konnten nicht geladen werden, Status ${xhr.status} - ${xhr.statusText}`);
     }
   };
-  xhr.open("GET", "/genres");
   xhr.send();
 };
+
+

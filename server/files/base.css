@@ -2,6 +2,8 @@ body {
   font-family: "Trebuchet MS", sans-serif;
   background-color: brown;
   color: beige;
+  
+  
 }
 
 main {
@@ -18,3 +20,4 @@ button {
 button:hover {
   background-color: darkgray;
 }
+
